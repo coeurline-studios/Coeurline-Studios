@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
+<link rel="shortcut icon" href="favicon.svg"/>
 <title>Kontakt – Coeurline Studios Hamburg-Winterhude</title>
 <meta name="description" content="Kontaktiere Coeurline Studios in Hamburg-Winterhude. Hanssensweg 20a, 22303 Hamburg. Buche deinen ersten Kurs oder stelle uns eine Frage."/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -54,22 +57,22 @@
         <!-- Formular -->
         <div class="md:col-span-7">
           <h2 class="font-headline text-2xl font-light mb-12">Nachricht senden</h2>
-          <form id="contact-form" class="space-y-10" onsubmit="handleSubmit(event)">
+          <form id="contact-form" action="https://formspree.io/f/xgoparqj" method="POST" class="space-y-10">
             <div>
               <label class="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b403c] block mb-3">Name</label>
-              <input type="text" placeholder="Dein vollständiger Name" required/>
+              <input type="text" name="name" placeholder="Dein vollständiger Name" required/>
             </div>
             <div>
               <label class="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b403c] block mb-3">E-Mail</label>
-              <input type="email" placeholder="deine@email.de" required/>
+              <input type="email" name="email" placeholder="deine@email.de" required/>
             </div>
             <div>
               <label class="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b403c] block mb-3">Betreff</label>
-              <input type="text" placeholder="Kursanfrage, Kooperation, Sonstiges..."/>
+              <input type="text" name="betreff" placeholder="Kursanfrage, Kooperation, Sonstiges..."/>
             </div>
             <div>
               <label class="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b403c] block mb-3">Nachricht</label>
-              <textarea placeholder="Was liegt dir auf dem Herzen?" required></textarea>
+              <textarea name="nachricht" placeholder="Was liegt dir auf dem Herzen?" required></textarea>
             </div>
             <div class="pt-4">
               <button type="submit" class="bg-[#770100] text-white px-10 py-4 text-[10px] font-label font-bold uppercase tracking-widest hover:bg-[#a20100] hover:translate-y-[-2px] transition-all editorial-shadow">Absenden</button>
@@ -150,6 +153,5 @@
 <script>
   function openZenamu(e){if(e)e.preventDefault();document.getElementById('zenamu-modal').style.display='flex';}
   document.getElementById('zenamu-modal').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
-  function handleSubmit(e){e.preventDefault();document.getElementById('contact-form').style.display='none';document.getElementById('form-success').style.display='block';}
 </script>
 </body></html>
